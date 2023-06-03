@@ -44,6 +44,7 @@ namespace SalesWebMvc
             services.AddScoped<SeedingService>();
             //adicionando o servico  (In Startup.cs, register SellerService to dependency injection system
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
 
         }
 
