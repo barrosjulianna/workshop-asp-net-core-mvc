@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Data;
+using SalesWebMvc.Services;
 
 namespace SalesWebMvc
 {
@@ -41,6 +42,8 @@ namespace SalesWebMvc
                     builder.MigrationsAssembly("SalesWebMvc")));
             //permite a injeção do banco (In Startup.cs, register SeedingService for dependency injection system)
             services.AddScoped<SeedingService>();
+            //adicionando o servico  (In Startup.cs, register SellerService to dependency injection system
+            services.AddScoped<SellerService>();
 
         }
 
