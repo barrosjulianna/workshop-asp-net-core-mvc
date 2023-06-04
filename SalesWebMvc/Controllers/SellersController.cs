@@ -64,5 +64,20 @@ namespace SalesWebMvc.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        //In View/Sellers/Index, check link to "Details" action
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _sellerService.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+
+        }
     }
 }
